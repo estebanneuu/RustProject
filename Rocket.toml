@@ -1,0 +1,14 @@
+[default]
+address = "127.0.0.1"
+port = 8080
+workers = 16
+max_blocking = 512
+keep_alive = 5
+ident = "Rocket"
+log_level = "normal"
+temp_dir = "/tmp"
+cli_colors = true
+
+[global]
+address = "127.0.0.1"
+port = 8080
