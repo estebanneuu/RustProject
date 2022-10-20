@@ -11,5 +11,6 @@ fn root() -> String {
 fn rocket() -> _ {
     rocket::build()
         .mount("/", routes![root])
+        .mount("/salut", routes![root])
 
 }
