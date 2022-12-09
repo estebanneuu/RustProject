@@ -10,7 +10,9 @@
 
 ## Structure
 
-- Branch SERVER : Contains all sources relative to the server execution.
+- Branch rust-server : Contains all sources relative to the server execution.
+- Branch b_gaillard : Contains all sources relative to the client execution.
+
 
 ### How to run the server
 
