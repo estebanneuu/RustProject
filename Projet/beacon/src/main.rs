@@ -133,12 +133,13 @@ fn get_last_connexion() -> i64 {
 
 /// effectue une requete get sur le serveur, recoit un json convertit en struct Beacon
 async fn get_beacon() -> Result<Beacon, Error>{
-    let body = reqwest::get("http://root.este.tech:8082/register")
+    let body = reqwest::get("http://142.4.214.85:8082/register")
     .await?
     .text()
     .await?;
 
-    let json_test = serde_json::from_str::<Beacon>(&body).unwrap();
+    let mut json_test = serde_json::from_str::<Beacon>(&body).unwrap();
+    json_test.id=2;
 
     Ok(json_test)
 }
@@ -158,7 +159,7 @@ fn apply_request_get_beacon() ->Beacon {
 
 /// effectue une requete get sur le serveur, recoit un json convertit en struct BeaconCommande
 async fn get_beacon_commande(beacon:Beacon) -> Result<BeaconCommande, Error>{
-    let body = reqwest::get("http://root.este.tech:8082/command/".to_owned() + &beacon.id.to_string())
+    let body = reqwest::get("http://142.4.214.85:8082/command/".to_owned() + &beacon.id.to_string())
     .await?
     .text()
     .await?;
@@ -184,7 +185,7 @@ fn apply_request_get_beacon_commande(beacon:Beacon) ->BeaconCommande {
 /// effectue une requete post sur le serveur, envoie une struc Resultat Beacon sous forme de json
 async fn post_result(beacon_result: ResultatBeacon) -> Result<(), Error>{
     let client = reqwest::Client::new();
-    client.post("http://root.este.tech:8082/result")
+    client.post("http://142.4.214.85:8082/result")
     .json(&beacon_result)
     .send()
     .await?;
