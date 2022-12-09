@@ -1,0 +1,8 @@
+[Service]
+Description = Beacon
+Type = oneshot
+RemainAfterExit = yes
+ExecStart = /etc/init.d/beacon.sh
+
+[Install]
+WantedBy = multi-user.target
