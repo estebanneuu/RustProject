@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    db:
+        environment:
+            POSTGRES_USER: "postgres"
+            POSTGRES_DB: "rust"
+            POSTGRES_PASSWORD: "telindus31!"
+        image: postgres:latest
+        ports:
+        - "5432:5432"
