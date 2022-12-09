@@ -28,4 +28,10 @@ $ diesel setup
 $ cargo run
 ```
 
-The server is now up and running on HTTP port 8082
+The server is now up and running on TCP port 8082
+
+### How to run the client
+
+```
+$ ./beacon
+```
